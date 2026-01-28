@@ -548,12 +548,30 @@
       "simplicity": "Simplicity",
       "simplicity_description": "No noise, cluttered display, or confusing UI."
     },
-    "open_source": {
-      "title": "Open source",
-      "description": "npmx is fully open source. Check out the {github}, join the {discord}, or follow us on {bluesky}.",
-      "github": "source code on GitHub",
-      "discord": "community on Discord",
-      "bluesky": "Bluesky"
+    "contributors": {
+      "title": "Contributors",
+      "description": "npmx is built by an amazing community of contributors.",
+      "loading": "Loading contributors...",
+      "error": "Failed to load contributors",
+      "view_profile": "View {name}'s GitHub profile"
+    },
+    "get_involved": {
+      "title": "Get involved",
+      "contribute": {
+        "title": "Contribute",
+        "description": "Help us build a better npm experience. Check out our GitHub repo to get started.",
+        "cta": "View on GitHub"
+      },
+      "community": {
+        "title": "Join the community",
+        "description": "Chat with other developers, ask questions, and share ideas on Discord.",
+        "cta": "Join Discord"
+      },
+      "follow": {
+        "title": "Stay updated",
+        "description": "Follow us on Bluesky for the latest news, updates, and tips.",
+        "cta": "Follow on Bluesky"
+      }
     }
   },
   "header": {

@@ -531,13 +531,6 @@
       "url_compatible_description": "Ersetze {npmjs} durch {npmx} in jeder URL und es sollte funktionieren und die gleichen Informationen mit besserer Erfahrung bieten.",
       "simplicity": "Einfachheit",
       "simplicity_description": "Kein Rauschen, überladene Anzeige oder verwirrende UI."
-    },
-    "open_source": {
-      "title": "Open Source",
-      "description": "npmx ist vollständig Open Source. Schau dir den {github} an, tritt dem {discord} bei oder folge uns auf {bluesky}.",
-      "github": "Quellcode auf GitHub",
-      "discord": "Community auf Discord",
-      "bluesky": "Bluesky"
     }
   },
   "header": {
