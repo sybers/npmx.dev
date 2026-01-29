@@ -79,6 +79,7 @@ const FILENAME_MAP: Record<string, string> = {
 
 /**
  * Determine the language for syntax highlighting based on file path
+ * @public
  */
 export function getLanguageFromPath(filePath: string): string {
   const filename = filePath.split('/').pop() || ''
@@ -251,6 +252,7 @@ export interface HighlightOptions {
 /**
  * Highlight code using Shiki with line-by-line output for line highlighting.
  * Each line is wrapped in a span.line for individual line highlighting.
+ * @public
  */
 export async function highlightCode(
   code: string,
@@ -265,8 +267,12 @@ export async function highlightCode(
     try {
       let html = shiki.codeToHtml(code, {
         lang: language,
-        theme: 'github-dark',
+        themes: { light: 'github-light', dark: 'github-dark' },
+        defaultColor: 'dark',
       })
+
+      // Shiki doesn't encode > in text content (e.g., arrow functions)
+      html = escapeRawGt(html)
 
       // Make import statements clickable for JS/TS languages
       if (IMPORT_LANGUAGES.has(language)) {

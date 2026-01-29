@@ -47,43 +47,11 @@ const filePath = computed(() => parsedRoute.value.filePath)
 // Fetch package data for version list
 const { data: pkg } = usePackage(packageName)
 
-// Get available versions sorted by dist-tags first, then by semver
-const availableVersions = computed(() => {
-  if (!pkg.value) return []
-
-  const distTags = pkg.value['dist-tags'] ?? {}
-  const allVersions = Object.keys(pkg.value.versions)
-
-  // Get dist-tag versions first (latest, next, beta, etc.)
-  const taggedVersions = new Set(Object.values(distTags))
-  const taggedList = Object.entries(distTags).map(([tag, ver]) => ({ version: ver, tag }))
-
-  // Get other versions (not in dist-tags), sorted by semver descending
-  const otherVersions = allVersions
-    .filter(v => !taggedVersions.has(v))
-    .sort((a, b) => {
-      // Simple semver comparison (major.minor.patch)
-      const partsA = a.split('.').map(p => parseInt(p, 10) || 0)
-      const partsB = b.split('.').map(p => parseInt(p, 10) || 0)
-      for (let i = 0; i < 3; i++) {
-        const diff = (partsB[i] ?? 0) - (partsA[i] ?? 0)
-        if (diff !== 0) return diff
-      }
-      return 0
-    })
-    .slice(0, 20) // Limit to 20 most recent
-    .map(v => ({ version: v, tag: undefined as string | undefined }))
-
-  return [...taggedList, ...otherVersions]
+// URL pattern for version selector - includes file path if present
+const versionUrlPattern = computed(() => {
+  const base = `/code/${packageName.value}/v/{version}`
+  return filePath.value ? `${base}/${filePath.value}` : base
 })
-
-// Version switch handler
-function switchVersion(newVersion: string) {
-  const newPath = filePath.value
-    ? `/code/${packageName.value}/v/${newVersion}/${filePath.value}`
-    : `/code/${packageName.value}/v/${newVersion}`
-  router.push(newPath)
-}
 
 // Fetch file tree
 const { data: fileTree, status: treeStatus } = useFetch<PackageFileTreeResponse>(
@@ -256,9 +224,10 @@ function handleLineClick(lineNum: number, event: MouseEvent) {
 }
 
 // Copy link to current line(s)
-async function copyPermalink() {
+const { copied: permalinkCopied, copy: copyPermalink } = useClipboard({ copiedDuring: 2000 })
+function copyPermalinkUrl() {
   const url = new URL(window.location.href)
-  await navigator.clipboard.writeText(url.toString())
+  copyPermalink(url.toString())
 }
 
 // Canonical URL for this code page
@@ -301,23 +270,14 @@ useSeoMeta({
             >{{ orgName ? packageName.replace(`@${orgName}/`, '') : packageName }}
           </NuxtLink>
           <!-- Version selector -->
-          <div v-if="version && availableVersions.length > 0" class="relative shrink-0">
-            <label for="version-select" class="sr-only">Select version</label>
-            <select
-              id="version-select"
-              :value="version"
-              :title="`v${version}`"
-              class="appearance-none pl-2 pr-6 py-0.5 font-mono text-sm bg-bg-muted border border-border rounded cursor-pointer hover:border-border-hover transition-colors max-w-32 sm:max-w-48 truncate"
-              @change="switchVersion(($event.target as HTMLSelectElement).value)"
-            >
-              <option v-for="v in availableVersions" :key="v.version" :value="v.version">
-                v{{ v.version }}{{ v.tag ? ` (${v.tag})` : '' }}
-              </option>
-            </select>
-            <span
-              class="i-carbon-chevron-down w-3 h-3 absolute right-1.5 top-1/2 -translate-y-1/2 pointer-events-none text-fg-muted"
-            />
-          </div>
+          <VersionSelector
+            v-if="version && pkg?.versions && pkg?.['dist-tags']"
+            :package-name="packageName"
+            :current-version="version"
+            :versions="pkg.versions"
+            :dist-tags="pkg['dist-tags']"
+            :url-pattern="versionUrlPattern"
+          />
           <span
             v-else-if="version"
             class="px-2 py-0.5 font-mono text-sm bg-bg-muted border border-border rounded truncate max-w-32 sm:max-w-48"
@@ -331,7 +291,7 @@ useSeoMeta({
 
         <!-- Breadcrumb navigation -->
         <nav
-          aria-label="File path"
+          :aria-label="$t('code.file_path')"
           class="flex items-center gap-1 font-mono text-sm overflow-x-auto"
         >
           <NuxtLink
@@ -339,9 +299,9 @@ useSeoMeta({
             :to="getCodeUrl()"
             class="text-fg-muted hover:text-fg transition-colors shrink-0"
           >
-            root
+            {{ $t('code.root') }}
           </NuxtLink>
-          <span v-else class="text-fg shrink-0">root</span>
+          <span v-else class="text-fg shrink-0">{{ $t('code.root') }}</span>
           <template v-for="(crumb, i) in breadcrumbs" :key="crumb.path">
             <span class="text-fg-subtle">/</span>
             <NuxtLink
@@ -359,20 +319,20 @@ useSeoMeta({
 
     <!-- Error: no version -->
     <div v-if="!version" class="container py-20 text-center">
-      <p class="text-fg-muted mb-4">Version is required to browse code</p>
-      <NuxtLink :to="packageRoute()" class="btn"> Go to package </NuxtLink>
+      <p class="text-fg-muted mb-4">{{ $t('code.version_required') }}</p>
+      <NuxtLink :to="packageRoute()" class="btn">{{ $t('code.go_to_package') }}</NuxtLink>
     </div>
 
     <!-- Loading state -->
     <div v-else-if="treeStatus === 'pending'" class="container py-20 text-center">
       <div class="i-svg-spinners-ring-resize w-8 h-8 mx-auto text-fg-muted" />
-      <p class="mt-4 text-fg-muted">Loading file tree...</p>
+      <p class="mt-4 text-fg-muted">{{ $t('code.loading_tree') }}</p>
     </div>
 
     <!-- Error state -->
     <div v-else-if="treeStatus === 'error'" class="container py-20 text-center" role="alert">
-      <p class="text-fg-muted mb-4">Failed to load files for this package version</p>
-      <NuxtLink :to="packageRoute(version)" class="btn"> Back to package </NuxtLink>
+      <p class="text-fg-muted mb-4">{{ $t('code.failed_to_load_tree') }}</p>
+      <NuxtLink :to="packageRoute(version)" class="btn">{{ $t('code.back_to_package') }}</NuxtLink>
     </div>
 
     <!-- Main content: file tree + file viewer -->
@@ -398,7 +358,9 @@ useSeoMeta({
             class="sticky top-0 bg-bg border-b border-border px-4 py-2 flex items-center justify-between"
           >
             <div class="flex items-center gap-3 text-sm">
-              <span class="text-fg-muted">{{ fileContent.lines }} lines</span>
+              <span class="text-fg-muted">{{
+                $t('code.lines', { count: fileContent.lines })
+              }}</span>
               <span v-if="currentNode?.size" class="text-fg-subtle">{{
                 formatBytes(currentNode.size)
               }}</span>
@@ -408,9 +370,9 @@ useSeoMeta({
                 v-if="selectedLines"
                 type="button"
                 class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors"
-                @click="copyPermalink"
+                @click="copyPermalinkUrl"
               >
-                Copy link
+                {{ permalinkCopied ? $t('common.copied') : $t('code.copy_link') }}
               </button>
               <a
                 :href="`https://cdn.jsdelivr.net/npm/${packageName}@${version}/${filePath}`"
@@ -418,7 +380,7 @@ useSeoMeta({
                 rel="noopener noreferrer"
                 class="px-2 py-1 font-mono text-xs text-fg-muted bg-bg-subtle border border-border rounded hover:text-fg hover:border-border-hover transition-colors inline-flex items-center gap-1"
               >
-                Raw
+                {{ $t('code.raw') }}
                 <span class="i-carbon-launch w-3 h-3" />
               </a>
             </div>
@@ -434,10 +396,9 @@ useSeoMeta({
         <!-- File too large warning -->
         <div v-else-if="isViewingFile && isFileTooLarge" class="py-20 text-center">
           <div class="i-carbon-document w-12 h-12 mx-auto text-fg-subtle mb-4" />
-          <p class="text-fg-muted mb-2">File too large to preview</p>
+          <p class="text-fg-muted mb-2">{{ $t('code.file_too_large') }}</p>
           <p class="text-fg-subtle text-sm mb-4">
-            {{ formatBytes(currentNode?.size ?? 0) }} exceeds the 500KB limit for syntax
-            highlighting
+            {{ $t('code.file_size_warning', { size: formatBytes(currentNode?.size ?? 0) }) }}
           </p>
           <a
             :href="`https://cdn.jsdelivr.net/npm/${packageName}@${version}/${filePath}`"
@@ -445,7 +406,7 @@ useSeoMeta({
             rel="noopener noreferrer"
             class="btn inline-flex items-center gap-2"
           >
-            View raw file
+            {{ $t('code.view_raw') }}
             <span class="i-carbon-launch w-4 h-4" />
           </a>
         </div>
@@ -455,7 +416,7 @@ useSeoMeta({
           v-else-if="filePath && fileStatus === 'pending'"
           class="flex min-h-full"
           aria-busy="true"
-          aria-label="Loading file content"
+          :aria-label="$t('common.loading')"
         >
           <!-- Fake line numbers column -->
           <div class="shrink-0 bg-bg-subtle border-r border-border w-14 py-0">
@@ -491,15 +452,15 @@ useSeoMeta({
         <!-- Error loading file -->
         <div v-else-if="filePath && fileStatus === 'error'" class="py-20 text-center" role="alert">
           <div class="i-carbon-warning-alt w-8 h-8 mx-auto text-fg-subtle mb-4" />
-          <p class="text-fg-muted mb-2">Failed to load file</p>
-          <p class="text-fg-subtle text-sm mb-4">The file may be too large or unavailable</p>
+          <p class="text-fg-muted mb-2">{{ $t('code.failed_to_load') }}</p>
+          <p class="text-fg-subtle text-sm mb-4">{{ $t('code.unavailable_hint') }}</p>
           <a
             :href="`https://cdn.jsdelivr.net/npm/${packageName}@${version}/${filePath}`"
             target="_blank"
             rel="noopener noreferrer"
             class="btn inline-flex items-center gap-2"
           >
-            View raw file
+            {{ $t('code.view_raw') }}
             <span class="i-carbon-launch w-4 h-4" />
           </a>
         </div>

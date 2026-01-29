@@ -59,7 +59,8 @@ import ProvenanceBadge from '~/components/ProvenanceBadge.vue'
 import MarkdownText from '~/components/MarkdownText.vue'
 import PackageSkeleton from '~/components/PackageSkeleton.vue'
 import PackageCard from '~/components/PackageCard.vue'
-import PackageDownloadStats from '~/components/PackageDownloadStats.vue'
+import ChartModal from '~/components/ChartModal.vue'
+import PackageDownloadAnalytics from '~/components/PackageDownloadAnalytics.vue'
 import PackagePlaygrounds from '~/components/PackagePlaygrounds.vue'
 import PackageDependencies from '~/components/PackageDependencies.vue'
 import PackageVersions from '~/components/PackageVersions.vue'
@@ -76,11 +77,12 @@ import ClaimPackageModal from '~/components/ClaimPackageModal.vue'
 import OperationsQueue from '~/components/OperationsQueue.vue'
 import PackageList from '~/components/PackageList.vue'
 import PackageMetricsBadges from '~/components/PackageMetricsBadges.vue'
-import PackageVulnerabilities from '~/components/PackageVulnerabilities.vue'
 import PackageAccessControls from '~/components/PackageAccessControls.vue'
 import OrgMembersPanel from '~/components/OrgMembersPanel.vue'
 import OrgTeamsPanel from '~/components/OrgTeamsPanel.vue'
 import CodeMobileTreeDrawer from '~/components/CodeMobileTreeDrawer.vue'
+import PackageVulnerabilityTree from '~/components/PackageVulnerabilityTree.vue'
+import DependencyPathPopup from '~/components/DependencyPathPopup.vue'
 
 describe('component accessibility audits', () => {
   describe('DateTime', () => {
@@ -322,25 +324,62 @@ describe('component accessibility audits', () => {
     })
   })
 
-  describe('PackageDownloadStats', () => {
-    it('should have no accessibility violations without data', async () => {
-      const component = await mountSuspended(PackageDownloadStats)
-      const results = await runAxe(component)
-      expect(results.violations).toEqual([])
-    })
+  // Note: PackageWeeklyDownloadStats tests are skipped because vue-data-ui VueUiSparkline
+  // component has issues in the test environment (requires DOM measurements that aren't
+  // available during SSR-like test mounting).
 
-    it('should have no accessibility violations with download data', async () => {
-      const downloads = [
-        { downloads: 1000, weekStart: '2024-01-01', weekEnd: '2024-01-07' },
-        { downloads: 1200, weekStart: '2024-01-08', weekEnd: '2024-01-14' },
-        { downloads: 1500, weekStart: '2024-01-15', weekEnd: '2024-01-21' },
-      ]
-      const component = await mountSuspended(PackageDownloadStats, {
-        props: { downloads },
+  describe('ChartModal', () => {
+    it('should have no accessibility violations when closed', async () => {
+      const component = await mountSuspended(ChartModal, {
+        props: { open: false },
+        slots: { title: 'Downloads', default: '<div>Chart content</div>' },
       })
       const results = await runAxe(component)
       expect(results.violations).toEqual([])
     })
+
+    // Note: Testing the open state is challenging because native <dialog>.showModal()
+    // requires the element to be in the DOM and connected, which doesn't work well
+    // with the test environment's cloning approach. The dialog accessibility is
+    // inherently provided by the native <dialog> element with aria-labelledby.
+  })
+
+  describe('PackageDownloadAnalytics', () => {
+    const mockWeeklyDownloads = [
+      { downloads: 1000, weekKey: '2024-W01', weekStart: '2024-01-01', weekEnd: '2024-01-07' },
+      { downloads: 1200, weekKey: '2024-W02', weekStart: '2024-01-08', weekEnd: '2024-01-14' },
+      { downloads: 1500, weekKey: '2024-W03', weekStart: '2024-01-15', weekEnd: '2024-01-21' },
+    ]
+
+    it('should have no accessibility violations (non-modal)', async () => {
+      // Test only non-modal mode to avoid vue-data-ui chart rendering issues
+      const component = await mountSuspended(PackageDownloadAnalytics, {
+        props: {
+          weeklyDownloads: mockWeeklyDownloads,
+          packageName: 'vue',
+          createdIso: '2020-01-01T00:00:00.000Z',
+          inModal: false,
+        },
+      })
+      const results = await runAxe(component)
+      expect(results.violations).toEqual([])
+    })
+
+    it('should have no accessibility violations with empty data', async () => {
+      const component = await mountSuspended(PackageDownloadAnalytics, {
+        props: {
+          weeklyDownloads: [],
+          packageName: 'vue',
+          createdIso: null,
+          inModal: false,
+        },
+      })
+      const results = await runAxe(component)
+      expect(results.violations).toEqual([])
+    })
+
+    // Note: Modal mode tests with inModal: true are skipped because vue-data-ui VueUiXy
+    // component has issues in the test environment (requires DOM measurements).
   })
 
   describe('PackagePlaygrounds', () => {
@@ -394,7 +433,7 @@ describe('component accessibility audits', () => {
   describe('PackageDependencies', () => {
     it('should have no accessibility violations without dependencies', async () => {
       const component = await mountSuspended(PackageDependencies, {
-        props: { packageName: 'test-package' },
+        props: { packageName: 'test-package', version: '1.0.0' },
       })
       const results = await runAxe(component)
       expect(results.violations).toEqual([])
@@ -404,6 +443,7 @@ describe('component accessibility audits', () => {
       const component = await mountSuspended(PackageDependencies, {
         props: {
           packageName: 'test-package',
+          version: '1.0.0',
           dependencies: {
             vue: '^3.0.0',
             lodash: '^4.17.0',
@@ -418,6 +458,7 @@ describe('component accessibility audits', () => {
       const component = await mountSuspended(PackageDependencies, {
         props: {
           packageName: 'test-package',
+          version: '1.0.0',
           peerDependencies: {
             vue: '^3.0.0',
           },
@@ -778,19 +819,6 @@ describe('component accessibility audits', () => {
     })
   })
 
-  describe('PackageVulnerabilities', () => {
-    it('should have no accessibility violations', async () => {
-      const component = await mountSuspended(PackageVulnerabilities, {
-        props: {
-          packageName: 'lodash',
-          version: '4.17.21',
-        },
-      })
-      const results = await runAxe(component)
-      expect(results.violations).toEqual([])
-    })
-  })
-
   describe('PackageAccessControls', () => {
     it('should have no accessibility violations', async () => {
       const component = await mountSuspended(PackageAccessControls, {
@@ -847,6 +875,41 @@ describe('component accessibility audits', () => {
           tree: mockTree,
           currentPath: '',
           baseUrl: '/code/vue',
+        },
+      })
+      const results = await runAxe(component)
+      expect(results.violations).toEqual([])
+    })
+  })
+
+  describe('PackageVulnerabilityTree', () => {
+    it('should have no accessibility violations in idle state', async () => {
+      const component = await mountSuspended(PackageVulnerabilityTree, {
+        props: {
+          packageName: 'vue',
+          version: '3.5.0',
+        },
+      })
+      const results = await runAxe(component)
+      expect(results.violations).toEqual([])
+    })
+  })
+
+  describe('DependencyPathPopup', () => {
+    it('should have no accessibility violations with short path', async () => {
+      const component = await mountSuspended(DependencyPathPopup, {
+        props: {
+          path: ['root@1.0.0', 'vuln-dep@2.0.0'],
+        },
+      })
+      const results = await runAxe(component)
+      expect(results.violations).toEqual([])
+    })
+
+    it('should have no accessibility violations with deep path', async () => {
+      const component = await mountSuspended(DependencyPathPopup, {
+        props: {
+          path: ['root@1.0.0', 'dep-a@1.0.0', 'dep-b@2.0.0', 'dep-c@3.0.0', 'vulnerable-pkg@4.0.0'],
         },
       })
       const results = await runAxe(component)
