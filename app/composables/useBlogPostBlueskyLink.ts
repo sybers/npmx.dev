@@ -1,6 +1,8 @@
 import { Constellation } from '#shared/utils/constellation'
 import { NPMX_SITE } from '#shared/utils/constants'
 
+const BLOG_BACKLINK_TTL_IN_SECONDS = 60 * 5
+
 export interface BlogPostBlueskyLink {
   did: string
   rkey: string
@@ -30,10 +32,14 @@ export function useBlogPostBlueskyLink(slug: MaybeRefOrGetter<string | null | un
           url,
           'app.bsky.feed.post',
           'embed.external.uri',
+          1,
+          undefined,
+          true,
           [['did:plc:jbeaa5kdaladzwq3r7f5xgwe']],
+          BLOG_BACKLINK_TTL_IN_SECONDS,
         )
 
-        const embedRecord = embedBacklinks.records[embedBacklinks.records.length - 1]
+        const embedRecord = embedBacklinks.records[0]
         if (embedRecord) {
           return {
             did: embedRecord.did,
@@ -47,10 +53,14 @@ export function useBlogPostBlueskyLink(slug: MaybeRefOrGetter<string | null | un
           url,
           'app.bsky.feed.post',
           'facets[].features[app.bsky.richtext.facet#link].uri',
+          1,
+          undefined,
+          true,
           [['did:plc:jbeaa5kdaladzwq3r7f5xgwe']],
+          BLOG_BACKLINK_TTL_IN_SECONDS,
         )
 
-        const facetRecord = facetBacklinks.records[facetBacklinks.records.length - 1]
+        const facetRecord = facetBacklinks.records[0]
         if (facetRecord) {
           return {
             did: facetRecord.did,
