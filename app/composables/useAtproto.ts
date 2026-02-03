@@ -7,6 +7,7 @@ export function useAtproto() {
     clear,
   } = useFetch<UserSession | null>('/api/auth/session', {
     server: false,
+    immediate: !import.meta.test,
   })
 
   async function logout() {
