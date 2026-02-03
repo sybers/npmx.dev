@@ -1,15 +1,13 @@
 import type { UserSession } from '#shared/schemas/userSession'
 
 export function useAtproto() {
-  if (import.meta.server) {
-    return {
-      user: ref(null),
-      pending: ref(false),
-      logout: async () => {},
-    }
-  }
-
-  const { data: user, pending, clear } = useFetch<UserSession | null>('/api/auth/session')
+  const {
+    data: user,
+    pending,
+    clear,
+  } = useFetch<UserSession | null>('/api/auth/session', {
+    server: false,
+  })
 
   async function logout() {
     await $fetch('/api/auth/session', {
