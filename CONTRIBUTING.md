@@ -408,7 +408,7 @@ To add a new locale:
    cp i18n/locales/uk-UA.json lunaria/files/uk-UA.json
    ```
 
-   > [!IMPORTANT]
+   > ⚠**Important:**
    > This file must be committed. Lunaria uses git history to track translation progress, so the build will fail if this file is missing.
 
 5. If the language is `right-to-left`, add `dir: 'rtl'` (see `ar-EG` in config for example)
