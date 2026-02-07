@@ -527,6 +527,14 @@
     "search_placeholder_description": "Фильтр по описанию...",
     "search_placeholder_keywords": "Фильтр по ключевым словам...",
     "search_placeholder_all": "Искать везде или использовать операторы name: desc: kw:",
+    "scope_name": "Имя",
+    "scope_name_description": "Искать только по именам пакетов",
+    "scope_description": "Описание",
+    "scope_description_description": "Искать только по описаниям",
+    "scope_keywords": "Ключевые слова",
+    "scope_keywords_description": "Искать только по ключевым словам",
+    "scope_all": "Везде",
+    "scope_all_description": "Искать во всех полях, поддерживает операторы name: desc: kw:",
     "weekly_downloads": "Загрузок в неделю",
     "updated_within": "Обновлено за",
     "security": "Безопасность",
@@ -534,11 +542,40 @@
     "more_keywords": "ещё +{count}",
     "clear_all": "Очистить все",
     "remove_filter": "Удалить фильтр {label}",
+    "download_range": {
+      "any": "Любое кол-во",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Любое время",
+      "week": "За неделю",
+      "month": "За месяц",
+      "quarter": "За 3 месяца",
+      "year": "За год"
+    },
+    "security_options": {
+      "all": "Все пакеты",
+      "secure": "Без предупреждений",
+      "insecure": "С предупреждениями"
+    },
     "sort": {
       "label": "Сортировка пакетов",
       "toggle_direction": "Переключить направление сортировки",
       "ascending": "По возрастанию",
-      "descending": "По убыванию"
+      "descending": "По убыванию",
+      "relevance": "Релевантность",
+      "downloads_week": "Загрузок/нед",
+      "downloads_day": "Загрузок/день",
+      "downloads_month": "Загрузок/мес",
+      "downloads_year": "Загрузок/год",
+      "name": "Имя",
+      "popularity": "Популярность",
+      "maintenance": "Поддержка",
+      "score": "Оценка"
     },
     "columns": {
       "title": "Столбцы",

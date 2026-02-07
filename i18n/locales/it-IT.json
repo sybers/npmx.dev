@@ -608,6 +608,14 @@
     "search_placeholder_description": "Filtra per descrizione...",
     "search_placeholder_keywords": "Filtra per keywords...",
     "search_placeholder_all": "Cerca tutto o usa name: desc: kw:",
+    "scope_name": "Nome",
+    "scope_name_description": "Cerca solo i nomi dei pacchetti",
+    "scope_description": "Descrizione",
+    "scope_description_description": "Cerca solo le descrizioni",
+    "scope_keywords": "Keywords",
+    "scope_keywords_description": "Cerca solo le keywords",
+    "scope_all": "Tutto",
+    "scope_all_description": "Cerca tutti i campi, supporta gli operatori name: desc: kw:",
     "weekly_downloads": "Download settimanali",
     "updated_within": "Aggiornato entro",
     "security": "Sicurezza",
@@ -622,11 +630,41 @@
       "security": "Sicurezza",
       "updated": "Aggiornato"
     },
+    "download_range": {
+      "any": "Qualsiasi",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Qualsiasi momento",
+      "week": "Ultima settimana",
+      "month": "Ultimo mese",
+      "quarter": "Ultimi 3 mesi",
+      "year": "Ultimo anno"
+    },
+    "security_options": {
+      "all": "Tutti i pacchetti",
+      "secure": "Senza avvisi",
+      "insecure": "Con avvisi"
+    },
     "sort": {
       "label": "Ordina pacchetti",
       "toggle_direction": "Cambia direzione ordinamento",
       "ascending": "Ascendente",
-      "descending": "Discendente"
+      "descending": "Discendente",
+      "relevance": "Rilevanza",
+      "downloads_week": "Download/settimana",
+      "downloads_day": "Download/giorno",
+      "downloads_month": "Download/mese",
+      "downloads_year": "Download/anno",
+      "published": "Ultimo pubblicato",
+      "name": "Nome",
+      "popularity": "Popolarità",
+      "maintenance": "Manutenzione",
+      "score": "Punteggio"
     },
     "columns": {
       "title": "Colonne",

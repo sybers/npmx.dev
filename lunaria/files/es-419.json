@@ -583,6 +583,14 @@
     "search_placeholder_description": "Filtrar por descripción...",
     "search_placeholder_keywords": "Filtrar por palabras clave...",
     "search_placeholder_all": "Buscar todo o usar operadores name: desc: kw:",
+    "scope_name": "Nombre",
+    "scope_name_description": "Buscar solo nombres de paquetes",
+    "scope_description": "Descripción",
+    "scope_description_description": "Buscar solo descripciones",
+    "scope_keywords": "Palabras clave",
+    "scope_keywords_description": "Buscar solo palabras clave",
+    "scope_all": "Todo",
+    "scope_all_description": "Buscar en todos los campos, soporta operadores name: desc: kw:",
     "weekly_downloads": "Descargas semanales",
     "updated_within": "Actualizado dentro de",
     "security": "Seguridad",
@@ -597,11 +605,41 @@
       "security": "Seguridad",
       "updated": "Actualizado"
     },
+    "download_range": {
+      "any": "Cualquiera",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Cualquier momento",
+      "week": "Semana pasada",
+      "month": "Mes pasado",
+      "quarter": "Últimos 3 meses",
+      "year": "Año pasado"
+    },
+    "security_options": {
+      "all": "Todos los paquetes",
+      "secure": "Sin advertencias",
+      "insecure": "Con advertencias"
+    },
     "sort": {
       "label": "Ordenar paquetes",
       "toggle_direction": "Alternar dirección de ordenamiento",
       "ascending": "Ascendente",
-      "descending": "Descendente"
+      "descending": "Descendente",
+      "relevance": "Relevancia",
+      "downloads_week": "Descargas/sem",
+      "downloads_day": "Descargas/día",
+      "downloads_month": "Descargas/mes",
+      "downloads_year": "Descargas/año",
+      "published": "Última publicación",
+      "name": "Nombre",
+      "popularity": "Popularidad",
+      "maintenance": "Mantenimiento",
+      "score": "Puntuación"
     },
     "columns": {
       "title": "Columnas",

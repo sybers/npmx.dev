@@ -607,6 +607,14 @@
     "search_placeholder_description": "説明で絞り込む...",
     "search_placeholder_keywords": "キーワードで絞り込む...",
     "search_placeholder_all": "すべて検索、または name: desc: kw: を使用",
+    "scope_name": "名前",
+    "scope_name_description": "パッケージ名のみ検索",
+    "scope_description": "説明",
+    "scope_description_description": "説明のみ検索",
+    "scope_keywords": "キーワード",
+    "scope_keywords_description": "キーワードのみ検索",
+    "scope_all": "すべて",
+    "scope_all_description": "全フィールドを検索。name: desc: kw: 演算子をサポート",
     "weekly_downloads": "週間ダウンロード数",
     "updated_within": "更新時期",
     "security": "セキュリティ",
@@ -621,11 +629,41 @@
       "security": "セキュリティ",
       "updated": "更新日"
     },
+    "download_range": {
+      "any": "指定なし",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "指定なし",
+      "week": "1週間以内",
+      "month": "1ヶ月以内",
+      "quarter": "3ヶ月以内",
+      "year": "1年以内"
+    },
+    "security_options": {
+      "all": "すべてのパッケージ",
+      "secure": "警告なし",
+      "insecure": "警告あり"
+    },
     "sort": {
       "label": "パッケージ一覧を並び替える",
       "toggle_direction": "並び順を切り替える",
       "ascending": "昇順",
-      "descending": "降順"
+      "descending": "降順",
+      "relevance": "関連度",
+      "downloads_week": "ダウンロード数/週",
+      "downloads_day": "ダウンロード数/日",
+      "downloads_month": "ダウンロード数/月",
+      "downloads_year": "ダウンロード数/年",
+      "published": "最新の公開日",
+      "name": "パッケージ名",
+      "popularity": "人気度",
+      "maintenance": "メンテナンス",
+      "score": "スコア"
     },
     "columns": {
       "title": "列",

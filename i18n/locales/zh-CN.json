@@ -608,6 +608,14 @@
     "search_placeholder_description": "通过描述搜索…",
     "search_placeholder_keywords": "通过关键词搜索…",
     "search_placeholder_all": "搜索全部或使用 name: desc: kw:",
+    "scope_name": "名称",
+    "scope_name_description": "只搜索包名",
+    "scope_description": "描述",
+    "scope_description_description": "只搜索描述",
+    "scope_keywords": "关键词",
+    "scope_keywords_description": "只搜索关键词",
+    "scope_all": "全部",
+    "scope_all_description": "搜索全部字段，支持 name: desc: kw: operators",
     "weekly_downloads": "每周下载量",
     "updated_within": "最近更新",
     "security": "安全性",
@@ -622,11 +630,41 @@
       "security": "安全性",
       "updated": "最近更新"
     },
+    "download_range": {
+      "any": "任意",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "任意",
+      "week": "近一周",
+      "month": "近一个月",
+      "quarter": "近三个月",
+      "year": "近一年"
+    },
+    "security_options": {
+      "all": "所有包",
+      "secure": "带有警告",
+      "insecure": "不带警告"
+    },
     "sort": {
       "label": "排序包",
       "toggle_direction": "切换排序方向",
       "ascending": "升序",
-      "descending": "降序"
+      "descending": "降序",
+      "relevance": "相关性",
+      "downloads_week": "每周下载量",
+      "downloads_day": "每日下载量",
+      "downloads_month": "每月下载量",
+      "downloads_year": "每年下载量",
+      "published": "最近发布",
+      "name": "名称",
+      "popularity": "受欢迎度",
+      "maintenance": "维护程度",
+      "score": "总分"
     },
     "columns": {
       "title": "列",

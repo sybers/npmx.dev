@@ -586,6 +586,14 @@
     "search_placeholder_description": "Filtruj po opisie...",
     "search_placeholder_keywords": "Filtruj po słowach kluczowych...",
     "search_placeholder_all": "Szukaj wszędzie lub użyj name: desc: kw:",
+    "scope_name": "Nazwa",
+    "scope_name_description": "Szukaj tylko w nazwach pakietów",
+    "scope_description": "Opis",
+    "scope_description_description": "Szukaj tylko w opisach",
+    "scope_keywords": "Słowa kluczowe",
+    "scope_keywords_description": "Szukaj tylko w słowach kluczowych",
+    "scope_all": "Wszystko",
+    "scope_all_description": "Szukaj we wszystkich polach, obsługuje operatory name: desc: kw:",
     "weekly_downloads": "Pobrania tygodniowe",
     "updated_within": "Zaktualizowano w ciągu",
     "security": "Bezpieczeństwo",
@@ -600,11 +608,41 @@
       "security": "Bezpieczeństwo",
       "updated": "Zaktualizowano"
     },
+    "download_range": {
+      "any": "Dowolnie",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Kiedykolwiek",
+      "week": "Ostatni tydzień",
+      "month": "Ostatni miesiąc",
+      "quarter": "Ostatnie 3 miesiące",
+      "year": "Ostatni rok"
+    },
+    "security_options": {
+      "all": "Wszystkie pakiety",
+      "secure": "Bez ostrzeżeń",
+      "insecure": "Z ostrzeżeniami"
+    },
     "sort": {
       "label": "Sortuj pakiety",
       "toggle_direction": "Przełącz kierunek sortowania",
       "ascending": "Rosnąco",
-      "descending": "Malejąco"
+      "descending": "Malejąco",
+      "relevance": "Trafność",
+      "downloads_week": "Pobrania/tydz.",
+      "downloads_day": "Pobrania/dzień",
+      "downloads_month": "Pobrania/mies.",
+      "downloads_year": "Pobrania/rok",
+      "published": "Ostatnio opublikowano",
+      "name": "Nazwa",
+      "popularity": "Popularność",
+      "maintenance": "Utrzymanie",
+      "score": "Wynik"
     },
     "columns": {
       "title": "Kolumny",

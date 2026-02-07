@@ -608,6 +608,14 @@
     "search_placeholder_description": "Nach Beschreibung filtern...",
     "search_placeholder_keywords": "Nach Stichwörtern filtern...",
     "search_placeholder_all": "Suche nach allem oder verwende name: desc: kw:",
+    "scope_name": "Name",
+    "scope_name_description": "Nur nach Paketnamen suchen",
+    "scope_description": "Beschreibung",
+    "scope_description_description": "Nur nach Beschreibungen suchen",
+    "scope_keywords": "Stichwörter",
+    "scope_keywords_description": "Nur nach Stichwörtern suchen",
+    "scope_all": "Alles",
+    "scope_all_description": "Alle Felder durchsuchen, unterstützt name: desc: kw: Operatoren",
     "weekly_downloads": "Wöchentliche Downloads",
     "updated_within": "Aktualisiert innerhalb von",
     "security": "Sicherheit",
@@ -622,11 +630,41 @@
       "security": "Sicherheit",
       "updated": "Aktualisiert"
     },
+    "download_range": {
+      "any": "Beliebig",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Jederzeit",
+      "week": "Letzte Woche",
+      "month": "Letzter Monat",
+      "quarter": "Letzte 3 Monate",
+      "year": "Letztes Jahr"
+    },
+    "security_options": {
+      "all": "Alle Pakete",
+      "secure": "Ohne Warnungen",
+      "insecure": "Mit Warnungen"
+    },
     "sort": {
       "label": "Pakete sortieren",
       "toggle_direction": "Sortierreihenfolge umschalten",
       "ascending": "Aufsteigend",
-      "descending": "Absteigend"
+      "descending": "Absteigend",
+      "relevance": "Relevanz",
+      "downloads_week": "Downloads/Woche",
+      "downloads_day": "Downloads/Tag",
+      "downloads_month": "Downloads/Monat",
+      "downloads_year": "Downloads/Jahr",
+      "published": "Zuletzt veröffentlicht",
+      "name": "Name",
+      "popularity": "Beliebtheit",
+      "maintenance": "Wartung",
+      "score": "Bewertung"
     },
     "columns": {
       "title": "Spalten",

@@ -581,6 +581,14 @@
     "search_placeholder_description": "Filtrer par description...",
     "search_placeholder_keywords": "Filtrer par mots-clés...",
     "search_placeholder_all": "Rechercher ou utiliser name: desc: kw:",
+    "scope_name": "Nom",
+    "scope_name_description": "Rechercher uniquement les noms de paquets",
+    "scope_description": "Description",
+    "scope_description_description": "Rechercher uniquement les descriptions",
+    "scope_keywords": "Mots-clés",
+    "scope_keywords_description": "Rechercher uniquement les mots-clés",
+    "scope_all": "Tout",
+    "scope_all_description": "Rechercher tous les champs, supporte les opérateurs name: desc: kw:",
     "weekly_downloads": "Téléchargements hebdomadaires",
     "updated_within": "Mis à jour d'ici",
     "security": "Sécurité",
@@ -595,11 +603,41 @@
       "security": "Sécurité",
       "updated": "Mis à jour"
     },
+    "download_range": {
+      "any": "Tous",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "N'importe quand",
+      "week": "Semaine passée",
+      "month": "Mois passé",
+      "quarter": "3 derniers mois",
+      "year": "Année passée"
+    },
+    "security_options": {
+      "all": "Tous les paquets",
+      "secure": "Sans avertissements",
+      "insecure": "Avec avertissements"
+    },
     "sort": {
       "label": "Trier les paquets",
       "toggle_direction": "Inverser l'ordre",
       "ascending": "Croissant",
-      "descending": "Décroissant"
+      "descending": "Décroissant",
+      "relevance": "Pertinence",
+      "downloads_week": "Téléch./sem",
+      "downloads_day": "Téléch./jour",
+      "downloads_month": "Téléch./mois",
+      "downloads_year": "Téléch./an",
+      "published": "Dern. publication",
+      "name": "Nom",
+      "popularity": "Popularité",
+      "maintenance": "Maintenance",
+      "score": "Score"
     },
     "columns": {
       "title": "Colonnes",

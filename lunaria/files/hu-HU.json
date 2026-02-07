@@ -532,6 +532,14 @@
     "search_placeholder_description": "Szűrés leírás szerint...",
     "search_placeholder_keywords": "Szűrés kulcsszavak szerint...",
     "search_placeholder_all": "Keresés mindenhol vagy használj name: desc: kw: operátorokat",
+    "scope_name": "Név",
+    "scope_name_description": "Keresés csak a nevekben",
+    "scope_description": "Leírás",
+    "scope_description_description": "Keresés csak a leírásokban",
+    "scope_keywords": "Kulcsszavak",
+    "scope_keywords_description": "Keresés csak a kulcsszavakban",
+    "scope_all": "Minden",
+    "scope_all_description": "Keresés minden mezőben (name: desc: kw: támogatott)",
     "weekly_downloads": "Heti letöltések",
     "updated_within": "Frissítve",
     "security": "Biztonság",
@@ -539,11 +547,40 @@
     "more_keywords": "+{count} további",
     "clear_all": "Összes törlése",
     "remove_filter": "{label} szűrő eltávolítása",
+    "download_range": {
+      "any": "Bármennyi",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Bármikor",
+      "week": "Elmúlt héten",
+      "month": "Elmúlt hónapban",
+      "quarter": "Elmúlt 3 hónapban",
+      "year": "Elmúlt évben"
+    },
+    "security_options": {
+      "all": "Minden csomag",
+      "secure": "Figyelmeztetés nélkül",
+      "insecure": "Figyelmeztetéssel"
+    },
     "sort": {
       "label": "Csomagok rendezése",
       "toggle_direction": "Rendezési irány váltása",
       "ascending": "Növekvő",
-      "descending": "Csökkenő"
+      "descending": "Csökkenő",
+      "relevance": "Relevancia",
+      "downloads_week": "Letöltés/hét",
+      "downloads_day": "Letöltés/nap",
+      "downloads_month": "Letöltés/hó",
+      "downloads_year": "Letöltés/év",
+      "name": "Név",
+      "popularity": "Népszerűség",
+      "maintenance": "Karbantartás",
+      "score": "Pontszám"
     },
     "columns": {
       "title": "Oszlopok",

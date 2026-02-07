@@ -533,6 +533,14 @@
     "search_placeholder_description": "Təsvirə görə süz...",
     "search_placeholder_keywords": "Açar sözlərə görə süz...",
     "search_placeholder_all": "Hamısında axtar və ya name: desc: kw: istifadə et",
+    "scope_name": "Ad",
+    "scope_name_description": "Yalnız paket adlarında axtar",
+    "scope_description": "Təsvir",
+    "scope_description_description": "Yalnız təsvirlərdə axtar",
+    "scope_keywords": "Açar sözlər",
+    "scope_keywords_description": "Yalnız açar sözlərdə axtar",
+    "scope_all": "Hamısı",
+    "scope_all_description": "Bütün sahələrdə axtar, name: desc: kw: operatorlarını dəstəkləyir",
     "weekly_downloads": "Həftəlik endirmələr",
     "updated_within": "Yenilənmə müddəti",
     "security": "Təhlükəsizlik",
@@ -540,11 +548,40 @@
     "more_keywords": "+{count} daha çox",
     "clear_all": "Hamısını təmizlə",
     "remove_filter": "{label} filtrini sil",
+    "download_range": {
+      "any": "İstənilən",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "İstənilən vaxt",
+      "week": "Son həftə",
+      "month": "Son ay",
+      "quarter": "Son 3 ay",
+      "year": "Son il"
+    },
+    "security_options": {
+      "all": "Bütün paketlər",
+      "secure": "Xəbərdarlıqsız",
+      "insecure": "Xəbərdarlıqlı"
+    },
     "sort": {
       "label": "Paketləri sırala",
       "toggle_direction": "Sıralama istiqamətini dəyişdir",
       "ascending": "Artan",
-      "descending": "Azalan"
+      "descending": "Azalan",
+      "relevance": "Uyğunluq",
+      "downloads_week": "Endirmələr/həftə",
+      "downloads_day": "Endirmələr/gün",
+      "downloads_month": "Endirmələr/ay",
+      "downloads_year": "Endirmələr/il",
+      "name": "Ad",
+      "popularity": "Populyarlıq",
+      "maintenance": "Baxım",
+      "score": "Xal"
     },
     "columns": {
       "title": "Sütunlar",

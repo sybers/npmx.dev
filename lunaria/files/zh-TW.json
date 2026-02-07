@@ -605,6 +605,14 @@
     "search_placeholder_description": "依描述篩選…",
     "search_placeholder_keywords": "依關鍵字篩選…",
     "search_placeholder_all": "搜尋全部或使用 name: desc: kw:",
+    "scope_name": "名稱",
+    "scope_name_description": "僅搜尋套件名稱",
+    "scope_description": "描述",
+    "scope_description_description": "僅搜尋描述",
+    "scope_keywords": "關鍵字",
+    "scope_keywords_description": "僅搜尋關鍵字",
+    "scope_all": "全部",
+    "scope_all_description": "搜尋所有欄位，支援 name: desc: kw: 運算子",
     "weekly_downloads": "每週下載量",
     "updated_within": "最近更新",
     "security": "安全性",
@@ -619,11 +627,41 @@
       "security": "安全性",
       "updated": "最近更新"
     },
+    "download_range": {
+      "any": "不限",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "不限時間",
+      "week": "近一週",
+      "month": "近一個月",
+      "quarter": "近三個月",
+      "year": "近一年"
+    },
+    "security_options": {
+      "all": "所有套件",
+      "secure": "無警告",
+      "insecure": "有警告"
+    },
     "sort": {
       "label": "排序套件",
       "toggle_direction": "切換排序方向",
       "ascending": "升冪",
-      "descending": "降冪"
+      "descending": "降冪",
+      "relevance": "相關性",
+      "downloads_week": "每週下載量",
+      "downloads_day": "每日下載量",
+      "downloads_month": "每月下載量",
+      "downloads_year": "每年下載量",
+      "published": "最近發布",
+      "name": "名稱",
+      "popularity": "受歡迎度",
+      "maintenance": "維護程度",
+      "score": "分數"
     },
     "columns": {
       "title": "欄位",

@@ -570,6 +570,14 @@
     "search_placeholder_description": "వివరణ ద్వారా ఫిల్టర్ చేయండి...",
     "search_placeholder_keywords": "కీవర్డ్‌ల ద్వారా ఫిల్టర్ చేయండి...",
     "search_placeholder_all": "అన్నింటిని శోధించండి లేదా name: desc: kw: ఉపయోగించండి",
+    "scope_name": "పేరు",
+    "scope_name_description": "ప్యాకేజ్ పేరును మాత్రమే శోధించండి",
+    "scope_description": "వివరణ",
+    "scope_description_description": "వివరణను మాత్రమే శోధించండి",
+    "scope_keywords": "కీవర్డ్‌లు",
+    "scope_keywords_description": "కీవర్డ్‌లను మాత్రమే శోధించండి",
+    "scope_all": "అన్నీ",
+    "scope_all_description": "అన్ని ఫీల్డ్‌లను శోధించండి, name: desc: kw: ఆపరేటర్‌లు మద్దతు ఇవ్వబడతాయి",
     "weekly_downloads": "వారపు డౌన్‌లోడ్‌లు",
     "updated_within": "నవీకరించబడింది",
     "security": "భద్రత",
@@ -577,11 +585,40 @@
     "more_keywords": "+{count} మరిన్ని",
     "clear_all": "అన్నింటిని క్లియర్ చేయండి",
     "remove_filter": "{label} ఫిల్టర్‌ను తీసివేయండి",
+    "download_range": {
+      "any": "ఏదైనా",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "ఏ సమయంలోనైనా",
+      "week": "గత వారం",
+      "month": "గత నెల",
+      "quarter": "గత 3 నెలలు",
+      "year": "గత సంవత్సరం"
+    },
+    "security_options": {
+      "all": "అన్ని ప్యాకేజ్‌లు",
+      "secure": "హెచ్చరికలు లేకుండా",
+      "insecure": "హెచ్చరికలతో"
+    },
     "sort": {
       "label": "ప్యాకేజ్‌లను క్రమబద్ధీకరించండి",
       "toggle_direction": "క్రమబద్ధీకరణ దిశను టాగుల్ చేయండి",
       "ascending": "ఆరోహణ",
-      "descending": "అవరోహణ"
+      "descending": "అవరోహణ",
+      "relevance": "సంబంధం",
+      "downloads_week": "డౌన్‌లోడ్‌లు/వారం",
+      "downloads_day": "డౌన్‌లోడ్‌లు/రోజు",
+      "downloads_month": "డౌన్‌లోడ్‌లు/నెల",
+      "downloads_year": "డౌన్‌లోడ్‌లు/సంవత్సరం",
+      "name": "పేరు",
+      "popularity": "జనాదరణ",
+      "maintenance": "నిర్వహణ",
+      "score": "స్కోర్"
     },
     "columns": {
       "title": "కాలమ్‌లు",

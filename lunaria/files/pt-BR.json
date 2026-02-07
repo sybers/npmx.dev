@@ -571,6 +571,14 @@
     "search_placeholder_description": "Filtrar por descrição...",
     "search_placeholder_keywords": "Filtrar por palavras-chave...",
     "search_placeholder_all": "Pesquisar tudo ou usar name: desc: kw:",
+    "scope_name": "Nome",
+    "scope_name_description": "Pesquisar apenas nomes de pacotes",
+    "scope_description": "Descrição",
+    "scope_description_description": "Pesquisar apenas descrições",
+    "scope_keywords": "Palavras-chave",
+    "scope_keywords_description": "Pesquisar apenas palavras-chave",
+    "scope_all": "Tudo",
+    "scope_all_description": "Pesquisar todos os campos, suporta operadores name: desc: kw:",
     "weekly_downloads": "Downloads semanais",
     "updated_within": "Atualizado em",
     "security": "Segurança",
@@ -578,11 +586,40 @@
     "more_keywords": "+{count} mais",
     "clear_all": "Limpar tudo",
     "remove_filter": "Remover filtro {label}",
+    "download_range": {
+      "any": "Qualquer",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Qualquer momento",
+      "week": "Semana passada",
+      "month": "Mês passado",
+      "quarter": "Últimos 3 meses",
+      "year": "Ano passado"
+    },
+    "security_options": {
+      "all": "Todos os pacotes",
+      "secure": "Sem avisos",
+      "insecure": "Com avisos"
+    },
     "sort": {
       "label": "Ordenar pacotes",
       "toggle_direction": "Alternar direção de classificação",
       "ascending": "Ascendente",
-      "descending": "Descendente"
+      "descending": "Descendente",
+      "relevance": "Relevância",
+      "downloads_week": "Downloads/sem",
+      "downloads_day": "Downloads/dia",
+      "downloads_month": "Downloads/mês",
+      "downloads_year": "Downloads/ano",
+      "name": "Nome",
+      "popularity": "Popularidade",
+      "maintenance": "Manutenção",
+      "score": "Pontuação"
     },
     "columns": {
       "title": "Colunas",

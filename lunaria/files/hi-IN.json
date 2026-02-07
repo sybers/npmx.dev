@@ -570,6 +570,14 @@
     "search_placeholder_description": "विवरण से फ़िल्टर करें...",
     "search_placeholder_keywords": "कीवर्ड्स से फ़िल्टर करें...",
     "search_placeholder_all": "सभी खोजें या name: desc: kw: का उपयोग करें",
+    "scope_name": "नाम",
+    "scope_name_description": "केवल पैकेज नाम खोजें",
+    "scope_description": "विवरण",
+    "scope_description_description": "केवल विवरण खोजें",
+    "scope_keywords": "कीवर्ड्स",
+    "scope_keywords_description": "केवल कीवर्ड्स खोजें",
+    "scope_all": "सभी",
+    "scope_all_description": "सभी फ़ील्ड खोजें, name: desc: kw: ऑपरेटर समर्थित",
     "weekly_downloads": "साप्ताहिक डाउनलोड्स",
     "updated_within": "अद्यतन किया गया",
     "security": "सुरक्षा",
@@ -577,11 +585,40 @@
     "more_keywords": "+{count} और",
     "clear_all": "सभी साफ़ करें",
     "remove_filter": "{label} फ़िल्टर हटाएं",
+    "download_range": {
+      "any": "कोई भी",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "किसी भी समय",
+      "week": "पिछला सप्ताह",
+      "month": "पिछला महीना",
+      "quarter": "पिछले 3 महीने",
+      "year": "पिछला वर्ष"
+    },
+    "security_options": {
+      "all": "सभी पैकेज",
+      "secure": "चेतावनियों के बिना",
+      "insecure": "चेतावनियों के साथ"
+    },
     "sort": {
       "label": "पैकेज क्रमबद्ध करें",
       "toggle_direction": "क्रमबद्ध दिशा टॉगल करें",
       "ascending": "आरोही",
-      "descending": "अवरोही"
+      "descending": "अवरोही",
+      "relevance": "प्रासंगिकता",
+      "downloads_week": "डाउनलोड्स/सप्ताह",
+      "downloads_day": "डाउनलोड्स/दिन",
+      "downloads_month": "डाउनलोड्स/महीना",
+      "downloads_year": "डाउनलोड्स/वर्ष",
+      "name": "नाम",
+      "popularity": "लोकप्रियता",
+      "maintenance": "रखरखाव",
+      "score": "स्कोर"
     },
     "columns": {
       "title": "कॉलम्स",

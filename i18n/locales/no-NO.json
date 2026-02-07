@@ -583,6 +583,14 @@
     "search_placeholder_description": "Filtrer etter beskrivelse...",
     "search_placeholder_keywords": "Filtrer etter nøkkelord...",
     "search_placeholder_all": "Søk alt eller bruk navn: besk: nøkkelord:",
+    "scope_name": "Navn",
+    "scope_name_description": "Søk kun i pakkenavn",
+    "scope_description": "Beskrivelse",
+    "scope_description_description": "Søk kun i beskrivelser",
+    "scope_keywords": "Nøkkelord",
+    "scope_keywords_description": "Søk kun i nøkkelord",
+    "scope_all": "Alt",
+    "scope_all_description": "Søk i alle felt, støtter name: desc: kw: operatorer",
     "weekly_downloads": "Ukentlige nedlastinger",
     "updated_within": "Oppdatert innen",
     "security": "Sikkerhet",
@@ -597,11 +605,41 @@
       "security": "Sikkerhet",
       "updated": "Oppdatert"
     },
+    "download_range": {
+      "any": "Hvilken som helst",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Når som helst",
+      "week": "Siste uke",
+      "month": "Siste måned",
+      "quarter": "Siste 3 måneder",
+      "year": "Siste år"
+    },
+    "security_options": {
+      "all": "Alle pakker",
+      "secure": "Uten advarsler",
+      "insecure": "Med advarsler"
+    },
     "sort": {
       "label": "Sorter pakker",
       "toggle_direction": "Veksle sorteringsrekkefølge",
       "ascending": "Stigende",
-      "descending": "Synkende"
+      "descending": "Synkende",
+      "relevance": "Relevans",
+      "downloads_week": "Nedlastinger/uke",
+      "downloads_day": "Nedlastinger/dag",
+      "downloads_month": "Nedlastinger/mnd",
+      "downloads_year": "Nedlastinger/år",
+      "published": "Sist publisert",
+      "name": "Navn",
+      "popularity": "Popularitet",
+      "maintenance": "Vedlikehold",
+      "score": "Poengsum"
     },
     "columns": {
       "title": "Kolonner",

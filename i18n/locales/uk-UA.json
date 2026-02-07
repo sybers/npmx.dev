@@ -533,6 +533,14 @@
     "search_placeholder_description": "Фільтрувати за описом...",
     "search_placeholder_keywords": "Фільтрувати за ключовими словами...",
     "search_placeholder_all": "Пошук усіх або використовуйте name: desc: kw:",
+    "scope_name": "Ім'я",
+    "scope_name_description": "Пошук тільки в назвах пакетів",
+    "scope_description": "Опис",
+    "scope_description_description": "Пошук тільки в описах",
+    "scope_keywords": "Ключові слова",
+    "scope_keywords_description": "Пошук тільки в ключових словах",
+    "scope_all": "Все",
+    "scope_all_description": "Пошук у всіх полях, підтримує оператори name: desc: kw:",
     "weekly_downloads": "Завантажень на тиждень",
     "updated_within": "Оновлено в",
     "security": "Безпека",
@@ -540,11 +548,40 @@
     "more_keywords": "+{count} більше",
     "clear_all": "Очистити все",
     "remove_filter": "Видалити фільтр {label}",
+    "download_range": {
+      "any": "Будь-які",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Будь-коли",
+      "week": "За останній тиждень",
+      "month": "За останній місяць",
+      "quarter": "За останні 3 місяці",
+      "year": "За останній рік"
+    },
+    "security_options": {
+      "all": "Усі пакети",
+      "secure": "Без попереджень",
+      "insecure": "З попередженнями"
+    },
     "sort": {
       "label": "Сортувати пакети",
       "toggle_direction": "Переключити напрямок сортування",
       "ascending": "За зростанням",
-      "descending": "За спаданням"
+      "descending": "За спаданням",
+      "relevance": "Релевантність",
+      "downloads_week": "Завантажень/тиж",
+      "downloads_day": "Завантажень/день",
+      "downloads_month": "Завантажень/міс",
+      "downloads_year": "Завантажень/рік",
+      "name": "Ім'я",
+      "popularity": "Популярність",
+      "maintenance": "Обслуговування",
+      "score": "Оцінка"
     },
     "columns": {
       "title": "Колонки",

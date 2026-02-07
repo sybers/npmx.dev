@@ -555,6 +555,14 @@
     "search_placeholder_description": "Filter berdasarkan deskripsi...",
     "search_placeholder_keywords": "Filter berdasarkan kata kunci...",
     "search_placeholder_all": "Cari semua atau gunakan nama: deskripsi: kw:",
+    "scope_name": "Nama",
+    "scope_name_description": "Hanya cari di nama paket",
+    "scope_description": "Deskripsi",
+    "scope_description_description": "Hanya cari di deskripsi",
+    "scope_keywords": "Kata Kunci",
+    "scope_keywords_description": "Hanya cari di kata kunci",
+    "scope_all": "Semua",
+    "scope_all_description": "Cari di semua kolom, mendukung operator nama: desc: kw:",
     "weekly_downloads": "Unduhan mingguan",
     "updated_within": "Diperbarui dalam",
     "security": "Keamanan",
@@ -562,11 +570,40 @@
     "more_keywords": "+{count} lagi",
     "clear_all": "Hapus semua",
     "remove_filter": "Hapus filter {label}",
+    "download_range": {
+      "any": "Apa pun",
+      "lt100": "< 100",
+      "100_1k": "100 - 1K",
+      "1k_10k": "1K - 10K",
+      "10k_100k": "10K - 100K",
+      "gt100k": "> 100K"
+    },
+    "updated": {
+      "any": "Kapan pun",
+      "week": "Seminggu terakhir",
+      "month": "Sebulan terakhir",
+      "quarter": "3 bulan terakhir",
+      "year": "Setahun terakhir"
+    },
+    "security_options": {
+      "all": "Semua paket",
+      "secure": "Tanpa peringatan",
+      "insecure": "Dengan peringatan"
+    },
     "sort": {
       "label": "Urutkan paket",
       "toggle_direction": "Ganti arah urutan",
       "ascending": "Naik (A-Z)",
-      "descending": "Turun (Z-A)"
+      "descending": "Turun (Z-A)",
+      "relevance": "Relevansi",
+      "downloads_week": "Unduhan/minggu",
+      "downloads_day": "Unduhan/hari",
+      "downloads_month": "Unduhan/bulan",
+      "downloads_year": "Unduhan/tahun",
+      "name": "Nama",
+      "popularity": "Popularitas",
+      "maintenance": "Pemeliharaan",
+      "score": "Skor"
     },
     "columns": {
       "title": "Kolom",
