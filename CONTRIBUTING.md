@@ -521,6 +521,32 @@ See how `es`, `es-ES`, and `es-419` are configured in [config/i18n.ts](./config/
 - Use `common.*` for shared strings (loading, retry, close, etc.)
 - Use component-specific prefixes: `package.card.*`, `settings.*`, `nav.*`
 - Do not use dashes (`-`) in translation keys; always use underscore (`_`): e.g., `privacy_policy` instead of `privacy-policy`
+- **Always use static string literals as translation keys.** Our i18n scripts (`pnpm i18n:report`) rely on static analysis to detect unused and missing keys. Dynamic keys cannot be analyzed and will be flagged as errors.
+
+  **Bad:**
+
+  ```vue
+  <!-- Template literal -->
+  <p>{{ $t(`package.tabs.${tab}`) }}</p>
+
+  <!-- Variable -->
+  <p>{{ $t(myKey) }}</p>
+  ```
+
+  **Good:**
+
+  ```typescript
+  const { t } = useI18n()
+
+  const tabLabels = computed(() => ({
+    readme: t('package.tabs.readme'),
+    versions: t('package.tabs.versions'),
+  }))
+  ```
+
+  ```vue
+  <p>{{ tabLabels[tab] }}</p>
+  ```
 
 ### Using i18n-ally (recommended)
 
