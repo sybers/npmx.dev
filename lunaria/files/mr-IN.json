@@ -172,7 +172,6 @@
       "fund": "निधी",
       "compare": "तुलना करा"
     },
-    "likes": {},
     "docs": {
       "not_available": "दस्तऐवज उपलब्ध नाहीत",
       "not_available_detail": "आम्ही या आवृत्तीसाठी दस्तऐवज तयार करू शकलो नाही."
@@ -192,10 +191,7 @@
       "title": "चालवा",
       "locally": "स्थानिकरित्या चालवा"
     },
-    "readme": {
-      "callout": {}
-    },
-    "provenance_section": {},
+    "readme": {},
     "keywords_title": "कीवर्ड",
     "compatibility": "सुसंगतता",
     "card": {},
@@ -210,6 +206,7 @@
     "metrics": {},
     "license": {},
     "vulnerabilities": {
+      "depth": {},
       "severity": {}
     },
     "deprecated": {},
@@ -221,6 +218,7 @@
     "sort": {}
   },
   "connector": {
+    "status": {},
     "modal": {}
   },
   "operations": {
@@ -290,7 +288,6 @@
   "compare": {
     "packages": {},
     "selector": {},
-    "no_dependency": {},
     "facets": {
       "categories": {},
       "items": {
@@ -299,7 +296,6 @@
         "dependencies": {},
         "totalDependencies": {},
         "downloads": {},
-        "totalLikes": {},
         "lastUpdated": {},
         "deprecated": {},
         "engines": {},
@@ -310,19 +306,5 @@
       },
       "values": {}
     }
-  },
-  "privacy_policy": {
-    "cookies": {
-      "what_are": {},
-      "types": {},
-      "local_storage": {},
-      "management": {}
-    },
-    "analytics": {},
-    "authenticated": {},
-    "data_retention": {},
-    "your_rights": {},
-    "contact": {},
-    "changes": {}
   }
 }

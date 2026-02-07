@@ -617,6 +617,7 @@
       "downloads_month": "Downloads/mês",
       "downloads_year": "Downloads/ano",
       "name": "Nome",
+      "quality": "Qualidade",
       "popularity": "Popularidade",
       "maintenance": "Manutenção",
       "score": "Pontuação"

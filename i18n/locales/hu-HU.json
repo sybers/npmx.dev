@@ -578,6 +578,7 @@
       "downloads_month": "Letöltés/hó",
       "downloads_year": "Letöltés/év",
       "name": "Név",
+      "quality": "Minőség",
       "popularity": "Népszerűség",
       "maintenance": "Karbantartás",
       "score": "Pontszám"

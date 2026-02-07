@@ -662,6 +662,7 @@
       "downloads_year": "每年下载量",
       "published": "最近发布",
       "name": "名称",
+      "quality": "质量评分",
       "popularity": "受欢迎度",
       "maintenance": "维护程度",
       "score": "总分"

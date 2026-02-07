@@ -661,6 +661,7 @@
       "downloads_year": "ダウンロード数/年",
       "published": "最新の公開日",
       "name": "パッケージ名",
+      "quality": "品質",
       "popularity": "人気度",
       "maintenance": "メンテナンス",
       "score": "スコア"

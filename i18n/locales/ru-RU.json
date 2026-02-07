@@ -573,6 +573,7 @@
       "downloads_month": "Загрузок/мес",
       "downloads_year": "Загрузок/год",
       "name": "Имя",
+      "quality": "Качество",
       "popularity": "Популярность",
       "maintenance": "Поддержка",
       "score": "Оценка"
