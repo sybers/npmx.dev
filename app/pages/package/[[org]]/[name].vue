@@ -1289,6 +1289,7 @@ const showSkeleton = shallowRef(false)
             :versions="pkg.versions"
             :dist-tags="pkg['dist-tags'] ?? {}"
             :time="pkg.time"
+            :selected-version="resolvedVersion ?? pkg['dist-tags']?.['latest']"
           />
 
           <!-- Install Scripts Warning -->
